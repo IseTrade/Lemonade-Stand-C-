@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
-    public class Lemon : Supply
+    public class Lemon : Inventory
     {
         public Lemon()
         {
