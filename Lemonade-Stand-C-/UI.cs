@@ -33,10 +33,6 @@ namespace Lemonade_Stand_C_
             Console.WriteLine("Please keep in mind that you're only able to purchase from us once/day.");
             Console.WriteLine("So, what would you like to buy today?");
             Console.WriteLine(" ");
-            Console.WriteLine("Please select 1 to buy cups");
-            Console.WriteLine("Please select 2 to buy lemons");
-            Console.WriteLine("Please select 3 to buy sugar");
-            Console.WriteLine("Please select 4 to buy ice cubes");
             Console.ReadKey();
         }
 
@@ -49,6 +45,11 @@ namespace Lemonade_Stand_C_
             Console.WriteLine("Please select 3 to change the number of ice cubes per cup");
             Console.ReadKey();
         }
-
+        public static void DisplayInventory(Inventory inventory, Wallet wallet)
+        {       
+            Console.WriteLine("Current you have {0} cups, {1} lemons, {2} ice cubes, {3} units of sugar, and {4} dollars to spend...", inventory.cup, inventory.lemon, inventory.ice, inventory.sugar, wallet.money);
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+        }
     }
 }

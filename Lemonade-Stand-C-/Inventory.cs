@@ -8,20 +8,13 @@ namespace Lemonade_Stand_C_
 {
     public class Inventory
     {
-        public int lemon;
-        public int cup;
-        public int sugar;
-        public int ice;
-        public int lemonade;
-        public int price;
+        public int lemon = 0;
+        public int cup = 0;
+        public int sugar = 0;
+        public int ice = 0;
+        public int lemonade = 0;
+        //public int price;
 
-        public Inventory()
-        {
-            lemon = 0;
-            cup = 0;
-            sugar = 0;
-            ice = 0;
-        }
 
         //public Store store;
 

@@ -8,19 +8,30 @@ namespace Lemonade_Stand_C_
 {
     class Program
     {
+        //variables
+        //Inventory inventory;
+        //Wallet wallet;
         
+
         static void Main(string[] args)
         {
             Weather weather = new Weather();
-            //Store store = new Store();
-            //Inventory inventory = new Inventory();
+            Store store = new Store();
+            Wallet wallet = new Wallet();
+            Inventory inventory = new Inventory();
 
             //weather.DayForecast(); //tested ok for generating random daily weather. Need more work on this!!!
             //Console.ReadLine();
 
-            Console.WriteLine(weather.DayScore());
-            Console.ReadKey();
-            //store.BuyCup(inventory);
+            //Console.WriteLine(weather.GetRandomCondition());
+            //Console.ReadKey();
+            //store.BuyCup(inventory, wallet);
+
+            ////store.BuyCup(inventory, wallet);
+            ////store.BuyLemon(inventory, wallet);
+
+            store.BuySupplies(inventory, wallet);
+            UI.DisplayInventory(inventory, wallet);
 
 
 

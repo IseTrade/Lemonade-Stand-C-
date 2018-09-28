@@ -31,12 +31,12 @@ namespace Lemonade_Stand_C_
         };
         
         //Randomizer
-        public int Randomizer()
-        {
-            Random rnd = new Random();
-            public int rand = rnd.Next(0, 3);
-            return rand;
-        }
+        //public int Randomizer()
+        //{
+        //    Random rnd = new Random();
+        //    public int rand = rnd.Next(0, 3);
+        //    return rand;
+        //}
 
         //randomize temperature list
         public int GetRandomTemp()
