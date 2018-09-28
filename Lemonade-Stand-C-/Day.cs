@@ -8,5 +8,8 @@ namespace Lemonade_Stand_C_
 {
     public class Day
     {
+        public List<Day> days;
+        public Weather weather;
+
     }
 }

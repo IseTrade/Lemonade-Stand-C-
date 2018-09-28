@@ -8,5 +8,18 @@ namespace Lemonade_Stand_C_
 {
     public class Game
     {
+        //Player player;
+        //Day day;
+        //Store store;
+        //Recipe recipe;
+        //Weather weather;
+        //Wallet wallet;
+
+        //public void Test()
+        //{
+
+        //    Console.WriteLine(player.wallet.money);
+        //    Console.ReadKey();
+        //}
     }
 }

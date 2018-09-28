@@ -12,10 +12,15 @@ namespace Lemonade_Stand_C_
         static void Main(string[] args)
         {
             Weather weather = new Weather();
+            //Store store = new Store();
+            //Inventory inventory = new Inventory();
 
-            weather.DayForecast(); //tested ok for generating random daily weather.
-            Console.ReadLine();
+            //weather.DayForecast(); //tested ok for generating random daily weather. Need more work on this!!!
+            //Console.ReadLine();
 
+            Console.WriteLine(weather.DayScore());
+            Console.ReadKey();
+            //store.BuyCup(inventory);
 
 
 

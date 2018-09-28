@@ -9,6 +9,7 @@ namespace Lemonade_Stand_C_
     public class Weather
     {
         public int dayScore;
+        public Random rnd;
         public Weather()
         {
             //default constructor
@@ -29,6 +30,13 @@ namespace Lemonade_Stand_C_
             "Sunny"
         };
         
+        //Randomizer
+        public int Randomizer()
+        {
+            Random rnd = new Random();
+            public int rand = rnd.Next(0, 3);
+            return rand;
+        }
 
         //randomize temperature list
         public int GetRandomTemp()
