@@ -15,6 +15,10 @@ namespace Lemonade_Stand_C_
 
         static void Main(string[] args)
         {
+            //Game rungame = new Game();
+            //rungame.RunGame();
+
+
             Weather weather = new Weather();
             Store store = new Store();
             Wallet wallet = new Wallet();
@@ -30,8 +34,9 @@ namespace Lemonade_Stand_C_
             ////store.BuyCup(inventory, wallet);
             ////store.BuyLemon(inventory, wallet);
 
-            store.BuySupplies(inventory, wallet);
-            UI.DisplayInventory(inventory, wallet);
+            //store.BuySupplies(inventory, wallet);
+            //UI.DisplayInventory(inventory, wallet);
+
 
 
 

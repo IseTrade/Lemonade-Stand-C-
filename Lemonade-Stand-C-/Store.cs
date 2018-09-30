@@ -19,7 +19,7 @@ namespace Lemonade_Stand_C_
             lemonCost = 0.15;
             sugarCost = 0.05;
             iceCost = 0.05;
-            cupCost = 0.10;
+            cupCost = 0.05;
             //Inventory inventory = new Inventory();
             //Store store = new Store();
         }

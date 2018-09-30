@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
-    public class Inventory
+    public class Inventory //number of lemons cups etc in stock
     {
         public int lemon = 0;
         public int cup = 0;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
-    public static class UI
+    public class UI
     {
 
         

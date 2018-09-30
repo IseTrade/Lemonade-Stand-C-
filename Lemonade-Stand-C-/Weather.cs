@@ -8,7 +8,8 @@ namespace Lemonade_Stand_C_
 {
     public class Weather
     {
-        public int dayScore;
+        public int weatherIndex;
+        public double weatherDemand;
         public Random rnd;
         public Weather()
         {
@@ -29,7 +30,10 @@ namespace Lemonade_Stand_C_
             "Overcast",
             "Sunny"
         };
-        
+        public void GetWeekForecast(Random rnd)
+        {
+
+        }
         //Randomizer
         //public int Randomizer()
         //{
@@ -59,16 +63,40 @@ namespace Lemonade_Stand_C_
             Console.WriteLine("The forecast for today is {0} and {1}.", temperatureList[GetRandomTemp()], conditionList[GetRandomCondition()]);
         }
 
-        public void WeekForecast()
+
+        public void TodayWeather()
         {
-            // add codes
+
         }
 
-        public int DayScore() //score 1-4, with 4 being the best weather and temperature
+        public int WeatherIndex() //score 0-4, with 4 being the best weather and temperature
         {
-            return dayScore = GetRandomCondition() + GetRandomTemp();
+            return weatherIndex = GetRandomCondition() + GetRandomTemp();
+        }
+        public double GetWeatherDemand()
+        {
+            if (weatherIndex == 4)
+            {
+                weatherDemand = 0.90;
+            }
+            else if (weatherIndex == 3)
+            {
+                weatherDemand = 0.70;
+            }
+            else if (weatherIndex == 2)
+            {
+                weatherDemand = 0.50;
+            }
+            else if (weatherIndex == 1)
+            {
+                weatherDemand = 0.30;
+            }
+            else if (weatherIndex == 0)
+            {
+                weatherDemand = 0.10;
+            }           
+            return weatherDemand;
         }
 
-
-        }
+    }
 }
