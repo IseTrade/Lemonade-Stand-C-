@@ -15,6 +15,7 @@ namespace Lemonade_Stand_C_
         public int soldLemonade;
         public Player()
         {
+            inventory = new Inventory();
             soldLemonade = 0;
         }
 

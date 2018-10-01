@@ -13,8 +13,7 @@ namespace Lemonade_Stand_C_
         public List<Customer> customer;
         public double dayProfit;
         public double dayEarning;
-        
-
+        public static Random rand = new Random();
         public Day()
         {
             day = 1;
@@ -35,12 +34,48 @@ namespace Lemonade_Stand_C_
             Console.WriteLine($"Today is Day {day}\n\n");
 
         }
-         public void GetDayCustomers()
+         public void GetDayCustomers(Weather weather)
         {
-
-
-
-
+            if (weather.weatherIndex == 4)
+            {
+                int numberCustomer = rand.Next(25, 30);
+                for (int i = 0; i < numberCustomer; i++)
+                {
+                    customer.Add(new Customer());
+                }
+            }
+            else if (weather.weatherIndex == 3)
+            {
+                int numberCustomer = rand.Next(15, 25);
+                for (int i = 0; i < numberCustomer; i++)
+                {
+                    customer.Add(new Customer());
+                }
+            }
+            else if (weather.weatherIndex == 2)
+            {
+                int numberCustomer = rand.Next(5, 15);
+                for (int i = 0; i < numberCustomer; i++)
+                {
+                    customer.Add(new Customer());
+                }
+            }
+            else if (weather.weatherIndex == 1)
+            {
+                int numberCustomer = rand.Next(0, 10);
+                for (int i = 0; i < numberCustomer; i++)
+                {
+                    customer.Add(new Customer());
+                }
+            }
+            else if (weather.weatherIndex == 0)
+            {
+                int numberCustomer = rand.Next(0, 5);
+                for (int i = 0; i < numberCustomer; i++)
+                {
+                    customer.Add(new Customer());
+                }
+            }
         }
         public void DayCost()
         {

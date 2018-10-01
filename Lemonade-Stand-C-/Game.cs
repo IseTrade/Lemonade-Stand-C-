@@ -28,13 +28,11 @@ namespace Lemonade_Stand_C_
             recipe = new Recipe();
         }
 
-        //public void Test()
-        //{
         public void RunGame()
         {
             UI.ShowRules();
             Console.Clear();
-            day.GetWeather();
+            day.GetWeather;
             day.GetForecast();
 
             weather.WeekForecast();
