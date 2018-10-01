@@ -173,7 +173,7 @@ namespace Lemonade_Stand_C_
             Console.WriteLine("I am making lemonade!");
             inventory.lemon--;
             inventory.ice--;
-            //cups is not used during this process but 1 lemonade jug
+            
             inventory.lemonade += 1;
         }
 
@@ -194,7 +194,7 @@ namespace Lemonade_Stand_C_
                     if (customer[i].GetBuyingProbability(recipe, weather) >= 40)
                     {
                         player.lemonadeSold++;
-                        inventory.lemonade--; //sell the entire jug of lemonade? sell 4 cups per 1 jug?
+                        inventory.lemonade--; 
                         break;
                     }
                     //No profit

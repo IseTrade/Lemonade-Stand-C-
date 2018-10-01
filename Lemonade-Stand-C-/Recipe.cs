@@ -29,6 +29,12 @@ namespace Lemonade_Stand_C_
             recipeCup = 1;
         }
 
+
+        public void AskNewRecipe()
+        {
+            Console.WriteLine("Do you want to make a new recipe?");
+
+        }
         public int PickLemon()
         {
             Console.WriteLine("How many lemons would you like to put in your each cup?");
@@ -49,8 +55,13 @@ namespace Lemonade_Stand_C_
             recipeIce = int.Parse(Console.ReadLine());
             return recipeIce;
         }
-
-        public int PickCup()
+        public void PickRecipe(Recipe recipe)
+        {
+            PickLemon();
+            PickSugar();
+            PickIce();
+        }
+        public int MakeLemonade()
         {
             Console.WriteLine("How many cups of lemonade would you like to make");
             recipeCup = int.Parse(Console.ReadLine());
@@ -67,7 +78,7 @@ namespace Lemonade_Stand_C_
         public void SetLemonadePrice()
         {
             Console.WriteLine("Please set the price for a lemonade cup in dollar amount.");
-            lemonadePrice = int.Parse(Console.ReadLine());
+            lemonadePrice = double.Parse(Console.ReadLine());
         }
 
         public void ShowRecipe(int recipeCup, int recipeIse, int recipeSugar, int recipeLemon)

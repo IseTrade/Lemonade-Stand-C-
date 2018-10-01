@@ -36,10 +36,8 @@ namespace Lemonade_Stand_C_
         public static void ShowRecipeMenu()
         {
             Console.WriteLine("Welcome to the recipe menu. Here you can hone your skills to make the perfect lemonade for");
-            Console.WriteLine("your customers. You can adjust the amount of sugar, lemon and/or ice that goes into each cup.");
-            Console.WriteLine("Please select 1 to change number of lemons in a cup");
-            Console.WriteLine("Please select 2 to change the number of sugar units in a cup");
-            Console.WriteLine("Please select 3 to change the number of ice cubes per cup");
+            Console.WriteLine("your customers. You can adjust the amount of sugar, lemon and ice that goes into each cup.");
+            Console.WriteLine("Please press any key to continue.");
             Console.ReadKey();
         }
         public static void PressKey()    // This adds a pause to screen display
@@ -47,9 +45,9 @@ namespace Lemonade_Stand_C_
             Console.WriteLine("Please press any key to continue");
             Console.ReadKey();
         }
-        public static void ShowInventory(Inventory inventory, Wallet wallet)
+        public static void ShowInventory(Inventory playerInventory, Wallet playerWallet)
         {
-            Console.WriteLine("Current you have {0} cups, {1} lemons, {2} ice cubes, {3} units of sugar, and {4} dollars to spend...", inventory.cup, inventory.lemon, inventory.ice, inventory.sugar, wallet.money);
+            Console.WriteLine("Current you have {0} cups, {1} lemons, {2} ice cubes, {3} units of sugar, and {4} dollars to spend...", playerInventory.cup, playerInventory.lemon, playerInventory.ice, playerInventory.sugar, playerWallet.money);
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }

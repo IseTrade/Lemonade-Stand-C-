@@ -44,15 +44,20 @@ namespace Lemonade_Stand_C_
             UI.ShowRules();
 
             //0. Check the weather forecast
+
             day.GetWeather();
             day.GetForecast();
-
             weather.ShowWeekForecast();
             weather.ShowCurrentWeather();
             Console.ReadKey();
             UI.ShowStoreMenu();
             Console.ReadKey();
             player.BuySupplies(store, playerInventory, playerWallet);
+            UI.ShowInventory(playerInventory, playerWallet);
+            Console.ReadKey();
+            UI.ShowRecipeMenu();
+            recipe.PickRecipe(recipe);
+            UI.PressKey();
 
 
 
