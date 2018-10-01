@@ -20,7 +20,8 @@ namespace Lemonade_Stand_C_
         public Recipe recipe;
         public Weather weather;
         public static Random rnd;
-        public Wallet wallet;
+        public Wallet playerWallet;
+        public Inventory playerInventory;
         public static Random rand = new Random();//A fixed random seed to avoid the same random value with new Random()
 
         //Initialize the class variables
@@ -30,7 +31,10 @@ namespace Lemonade_Stand_C_
             store = new Store();
             day = new Day();
             weather = new Weather();
-            recipe = new Recipe();
+            recipe = new Recipe();        
+            playerInventory = new Inventory();
+            playerWallet = new Wallet();
+
         }
 
         //Start the game
@@ -48,12 +52,10 @@ namespace Lemonade_Stand_C_
             Console.ReadKey();
             UI.ShowStoreMenu();
             Console.ReadKey();
-            player.BuySupplies(Store store, Inventory inventory, Wallet wallet);
+            player.BuySupplies(store, playerInventory, playerWallet);
 
 
 
-            //1. Purchase items from the store
-            //TODO
 
             //2. Make lemonade with the purchased items
             //TODO

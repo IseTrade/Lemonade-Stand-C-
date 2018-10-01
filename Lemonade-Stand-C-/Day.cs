@@ -9,7 +9,7 @@ namespace Lemonade_Stand_C_
     /// <summary>
     /// A class which describes daily lemonade stand operations
     /// </summary>
-    public class Day
+    public class Day:Common
     {
         public Weather weather;
         public Player player;
@@ -23,7 +23,7 @@ namespace Lemonade_Stand_C_
         public double dayProfit;
         public double dayLoss;
 
-        public static Random rand = new Random();
+        //public static Random rand = new Random();
 
         public Day()
         {
@@ -51,7 +51,7 @@ namespace Lemonade_Stand_C_
         {
             if (weather.weatherIndex == 4)
             {
-                int numberCustomer = rand.Next(25, 30);
+                int numberCustomer = GetRandom(25, 30);
                 for (int i = 0; i < numberCustomer; i++)
                 {
                     customer.Add(new Customer());
@@ -59,7 +59,7 @@ namespace Lemonade_Stand_C_
             }
             else if (weather.weatherIndex == 3)
             {
-                int numberCustomer = rand.Next(15, 25);
+                int numberCustomer = GetRandom(15, 25);
                 for (int i = 0; i < numberCustomer; i++)
                 {
                     customer.Add(new Customer());
@@ -67,7 +67,7 @@ namespace Lemonade_Stand_C_
             }
             else if (weather.weatherIndex == 2)
             {
-                int numberCustomer = rand.Next(5, 15);
+                int numberCustomer = GetRandom(5, 15);
                 for (int i = 0; i < numberCustomer; i++)
                 {
                     customer.Add(new Customer());
@@ -75,7 +75,7 @@ namespace Lemonade_Stand_C_
             }
             else if (weather.weatherIndex == 1)
             {
-                int numberCustomer = rand.Next(0, 10);
+                int numberCustomer = GetRandom(0, 10);
                 for (int i = 0; i < numberCustomer; i++)
                 {
                     customer.Add(new Customer());
@@ -83,7 +83,7 @@ namespace Lemonade_Stand_C_
             }
             else if (weather.weatherIndex == 0)
             {
-                int numberCustomer = rand.Next(0, 5);
+                int numberCustomer = GetRandom(0, 5);
                 for (int i = 0; i < numberCustomer; i++)
                 {
                     customer.Add(new Customer());

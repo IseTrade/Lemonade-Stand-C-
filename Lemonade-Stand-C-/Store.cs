@@ -74,7 +74,7 @@ namespace Lemonade_Stand_C_
         //{
 
 
-        }
+        
 
         //The store keeper checks his stock
         public void CheckStock(Inventory playerInventory)
