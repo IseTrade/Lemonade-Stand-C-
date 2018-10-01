@@ -6,35 +6,48 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
+    /// <summary>
+    /// A class which describes daily lemonade stand operations
+    /// </summary>
     public class Day
     {
         public Weather weather;
+        public Player player;
+
         public int day;
+
         public List<Customer> customer;
+
+        public double daySupplyCost;
+        public double dayRevenue;
         public double dayProfit;
-        public double dayEarning;
+        public double dayLoss;
+
         public static Random rand = new Random();
+
         public Day()
         {
             day = 1;
             weather = new Weather();
             customer = new List<Customer>();
-
         }
-        public void GetWeather(Random rnd)
+
+        public Weather GetWeather()
         {
-
+            return this.weather;
         }
-        public void GetForecast(Random rnd)
+
+        public void GetForecast()
         {
-
+            //TODO
         }
+
         public void DisplayDay()
         {
             Console.WriteLine($"Today is Day {day}\n\n");
 
         }
-         public void GetDayCustomers(Weather weather)
+        public void GetDayCustomers(Weather weather)
         {
             if (weather.weatherIndex == 4)
             {
@@ -77,38 +90,38 @@ namespace Lemonade_Stand_C_
                 }
             }
         }
+
         public void DayCost()
         {
-            double dayCost = 
-        }
-        public void GetDayRevenue()
-        
-            double dayRevenue = Player.soldLemonade * Inventory.lemonadePrice;
-        }
-        public void GetDayProfit()
-        {
-        double dayProfit = dayRevnue - store.supplyCost;
-
-        }
-        public void GetDayLoss()
-        {
-            dayLoss = day.SupplyCost - dayProfit; 
+            //TODO
         }
 
+        public double GetDayRevenue(Player player, Recipe recipe)
+        {
+            return player.lemonadeSold * recipe.lemonadePrice;
+        }
+
+        public double GetDayProfit()
+        {
+            return dayRevenue - daySupplyCost;
+        }
+
+        public double GetDayLoss()
+        {
+            return daySupplyCost - dayProfit;
+        }
 
         public void DisplayDayProfit()
         {
-        if (dayProfit <= 0)
-        {
-            Console.WriteLine($"You lost money today! You lost ${dayLost}.");
-            Console.ReadKey();
-        }
-        else
-        {
-            Console.WriteLine($"You made ${dayProfit} today!");
-            Console.ReadKey();
-        }
+            if (dayProfit <= 0)
+            {
+                Console.WriteLine($"You lost money today! You lost {dayLoss}.");
+            }
+            else
+            {
+                Console.WriteLine($"You made {dayProfit} today!");
+            }
 
-    }
+        }
     }
 }

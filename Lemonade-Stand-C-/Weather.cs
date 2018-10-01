@@ -6,18 +6,16 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
-    public class Weather
+    //Inherit from our common methods
+    public class Weather : Common
     {
         public int weatherIndex;
         public int temperatureIndex;
         public int conditionIndex;
-        //public List<int> weekTemplist;
-        //public List<int> weekCondList;
-        public static Random rand = new Random();
 
-        public List<int> weekTempList = new List<int> ();
-        public List<int> weekCondList = new List<int> ();
-        public List<string> temperatureList = new List<string> ()
+        public List<int> weekTempList = new List<int>();
+        public List<int> weekCondList = new List<int>();
+        public List<string> temperatureList = new List<string>()
         {
             "Cold",
             "Warm",
@@ -35,60 +33,45 @@ namespace Lemonade_Stand_C_
         {
             for (int i = 0; i < 7; i++)
             {
-                //Random rnd = new Random();
-                int temperatureIndex = rand.Next(0, 3);
+                int temperatureIndex = GetRandom(0, 3);
                 weekTempList.Add(temperatureIndex);
-            }    
+            }
             return weekTempList;
         }
-
 
         //randomize condition list
         public List<int> GetWeekConditionList()
         {
             for (int i = 0; i < 7; i++)
             {
-                //Random rnd = new Random();
-                int conditionIndex = rand.Next(0, 3);
+                int conditionIndex = GetRandom(0, 3);
                 weekCondList.Add(conditionIndex);
             }
             return weekCondList;
         }
-        //public void GetWeekForecast()
-        //{
-            // The weekly forecast is taken from weekTemList and weekCondList
-            // then each list is then randomized and element [0] is used to determine currently weather.
-        //}
-        //public void GetTodayWeather()
-        //{
-            // The weekly forecast is taken from weekTemList and weekCondList
-            // then each list is then randomized and element [0] is used to determine currently weather.
-        //}
+
+
         public void ShowWeekForecast()
         {
-            Console.WriteLine("The forecast for next 7 days are as follows: ");
-            for (int i = 0; i < 7; i++)
+            weekTempList = GetWeekTempList();
+            weekCondList = GetWeekConditionList();
+            Console.WriteLine("The week forecast are as follows: ");
+            for (int i = 0, j = 0; i < 7; i++, j++)
             {
-                string x = temperatureList[weekTempList[i]];
-                string y = conditionList[weekTempList[i]];
-                Console.WriteLine("Day {0}  {1} and {2}.", i+1, x,y);
-            }           
-        }
-        public int ShowTodayWeather()
-        {
-            int x = rand.Next(0 - 7);
-            int y = rand.Next(0 - 7);
-            temperatureIndex = weekTempList[x];
-            conditionIndex = weekCondList[y];                    
-            Console.WriteLine("The current weather is {0} and {1}.", temperatureList[temperatureIndex], conditionList[conditionIndex]);
-            return weatherIndex = temperatureIndex + conditionIndex;
+                string temp = temperatureList[weekTempList[i]];
+                string cond = conditionList[weekTempList[i]];
+                Console.WriteLine("Day {0} {1} and {2}.", j, temp, cond);
+            }
         }
 
-        //public int WeatherIndex() //score 0-4, with 4 being the best weather and temperature
-        //{
-        //    return weatherIndex = weekTempList[0] + weekCondList[0];
-            // this is used in calculating customers demand probability due to weather. 
-            
-        //}
+        public void ShowCurrentWeather()
+        {
+            int x = GetRandom(0, 6);
+            //int y = GetRandom(0, 7);
+
+            temperatureIndex = weekTempList[x];
+            conditionIndex = weekCondList[x];
+            Console.WriteLine("The current weather is {0} and {1}.", temperatureList[temperatureIndex], conditionList[conditionIndex]);
+        }
     }
 }

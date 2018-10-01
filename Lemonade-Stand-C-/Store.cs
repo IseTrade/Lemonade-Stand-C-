@@ -6,96 +6,81 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
+    /// <summary>
+    /// A class which describes a store for the required items needed to be purchased
+    /// </summary>
     public class Store
     {
         public double lemonCost;
         public double sugarCost;
         public double iceCost;
         public double cupCost;
-        public Inventory inventory;
-        public Wallet wallet;
+        Player player;
+        //UI ui;
+
         public Store()
         {
             lemonCost = 0.15;
             sugarCost = 0.05;
             iceCost = 0.05;
             cupCost = 0.05;
-            //Inventory inventory = new Inventory();
-            //Store store = new Store();
         }
 
-        public void BuyCup(Inventory inventory, Wallet wallet)
-        {
-            Console.WriteLine("Please enter the number of cups you want to buy: ");
-            int cupBought = int.Parse(Console.ReadLine());
-            Console.WriteLine("You bought {0} cups at the cost of {1} dollars.", cupBought, cupBought * cupCost);           
-            inventory.cup += cupBought;
-            wallet.money -= (cupBought * cupCost);
-            Console.WriteLine("You now have {0} cups in your inventory", inventory.cup);
-            Console.WriteLine("Your have {0} dollars remaining to spend", wallet.money);
-            Console.WriteLine("Please press any key to continue");
-            Console.ReadKey();
-            //return cupBought;
-        }
-        public void BuyLemon(Inventory inventory, Wallet wallet)
-        {
-            Console.WriteLine("Please enter the number of Lemons you want to buy: ");
-            int lemonBought = int.Parse(Console.ReadLine());
+        //abilities of the store keeper
 
-            Console.WriteLine("You bought {0} lemons at the cost of {1} dollars.", lemonBought, lemonBought * lemonCost);
-            inventory.lemon += lemonBought;
-            wallet.money -= (lemonBought * lemonCost);
-            Console.WriteLine("You now have {0} lemons in your inventory", inventory.lemon);
-            Console.WriteLine("Your have {0} dollars remaining to spend", wallet.money);
-            Console.WriteLine("Please press any key to continue");
-            Console.ReadKey();
+        //assume store keeper has unlimited stock and we don't need to keep track of his inventories
 
-            //return lemonBought;
-        }
+        //public int SellLemon(Inventory playerInventory, Wallet playerWallet)
+        //{
+        //    Console.WriteLine("How many lemons would you like buy?");
+        //    int lemonsBought = int.Parse(Console.ReadLine());
+        //    playerWallet.money -= lemonsBought * lemonCost; //decreases money by amount spent on lemons
+        //    playerInventory.lemon += lemonsBought; // added to stock lemon inventory
+        //    Console.ReadKey();
+        //    return playerInventory.lemon;  //return value to current number of lemons in stock     
+        //}
 
-        public void BuyIce(Inventory inventory, Wallet wallet)
-        {
-            Console.WriteLine("Please enter the number of ice cubes you want to buy: ");
-            int iceBought = int.Parse(Console.ReadLine());
+        //public int SellSugar(Inventory playerInventory, Wallet playerWallet)
+        //{
+        //  Console.WriteLine("How many sugar cubes would you like to buy?");
+        //    int sugarBought = int.Parse(Console.ReadLine());
+        //    playerWallet.money -= sugarBought * sugarCost; 
+        //    playerInventory.lemon += sugarBought; 
+        //    Console.ReadKey();
+        //    return playerInventory.sugar;
+        //}
 
-            Console.WriteLine("You bought {0} ice cubes at the cost of {1} dollars.", iceBought, iceBought * iceCost);
-            inventory.ice += iceBought;
-            wallet.money -= (iceBought * iceCost);
-            Console.WriteLine("You now have {0} ice cubes in your inventory", inventory.ice);
-            Console.WriteLine("Your have {0} dollars remaining to spend", wallet.money);
-            Console.WriteLine("Please press any key to continue");
-            Console.ReadKey();
+        //public int SellIce(Inventory playerInventory, Wallet playerWallet)
+        //{
+        //    Console.WriteLine("How many ice cubes would you like to buy?");
+        //    int iceBought = int.Parse(Console.ReadLine());
+        //    playerWallet.money -= iceBought * iceCost;
+        //    playerInventory.ice += iceBought;
+        //    Console.ReadKey();
+        //    return playerInventory.ice;
+        //}
 
-            //return iceBought
-        }
+        //public int SellCup(Inventory playerInventory, Wallet playerWallet)
+        //{
+        //    Console.WriteLine("How many cups would you like to buy?");
+        //    int cupBought = int.Parse(Console.ReadLine());
+        //    playerWallet.money -= cupBought * cupCost;
+        //    playerInventory.cup += cupBought;
+        //    Console.ReadKey();
+        //    return playerInventory.cup;
+        //}
 
-        public void BuySugar(Inventory inventory, Wallet wallet)
-        {
-            Console.WriteLine("Please enter the number of Sugar units you want to buy: ");
-            int sugarBought = int.Parse(Console.ReadLine());
+        //public void Sell(Inventory inventory, double itemCost)
+        //{
 
-            Console.WriteLine("You bought {0} sugar units at the cost of {1} dollars.", sugarBought, sugarBought * sugarCost);
-            inventory.sugar += sugarBought;
-            wallet.money -= (sugarBought * sugarCost);
-            Console.WriteLine("You now have {0} cups in your inventory", inventory.sugar);
-            Console.WriteLine("Your have {0} dollars remaining to spend", wallet.money);
-            Console.WriteLine("Please press any key to continue");
-            Console.ReadKey();
 
-            //return sugarBought;
         }
 
-        public void BuySupplies(Inventory inventory, Wallet wallet)
+        //The store keeper checks his stock
+        public void CheckStock(Inventory playerInventory)
         {
-            //Inventory inventory1 = new Inventory();
-            //Wallet wallet = new Wallet();
-            UI.DisplayStoreMenu();
-            Console.WriteLine("Press any key to continue");
-            BuyCup(inventory, wallet);
-            BuyIce(inventory, wallet);
-            BuySugar(inventory, wallet);           
-            BuyLemon(inventory,wallet);
-
+            //TODO
+            //Print the items left in the store
         }
     }
 }

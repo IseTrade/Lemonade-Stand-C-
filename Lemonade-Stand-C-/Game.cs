@@ -6,47 +6,69 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
+    /// <summary>
+    /// The Lemonade Stand Game
+    /// </summary>
     public class Game
     {
+        //Create the game objects
         public Player player;
         public Customer customer;
+        public Inventory inventory;
         public Day day;
         public Store store;
         public Recipe recipe;
         public Weather weather;
-        public Random rnd;
-        public UI ui;
+        public static Random rnd;
         public Wallet wallet;
+        public static Random rand = new Random();//A fixed random seed to avoid the same random value with new Random()
+
+        //Initialize the class variables
         public Game()
         {
             player = new Player();
             store = new Store();
-            ui = new UI();
             day = new Day();
-            rnd = new Random();
             weather = new Weather();
             recipe = new Recipe();
         }
 
+        //Start the game
         public void RunGame()
         {
+            //Show the initital game menu
             UI.ShowRules();
-            Console.Clear();
-            day.GetWeather;
+
+            //0. Check the weather forecast
+            day.GetWeather();
             day.GetForecast();
 
-            weather.WeekForecast();
-            weather.DayForecast();
-            Console.Clear();
-            weather.TodayWeather();
+            weather.ShowWeekForecast();
+            weather.ShowCurrentWeather();
+            Console.ReadKey();
+            UI.ShowStoreMenu();
+            Console.ReadKey();
+            player.BuySupplies(Store store, Inventory inventory, Wallet wallet);
 
 
-            store.BuyLemon(player.inventory, player.wallet);
+
+            //1. Purchase items from the store
+            //TODO
+
+            //2. Make lemonade with the purchased items
+            //TODO
+
+            //3. Get the weather forecast
+            //TODO
+
+            //4. Sell lemonade to customer
+            //TODO
+
+            //5. Calculate profits
+            //TODO
+
+            //6. Restock items from the store
+            //TODO
         }
-
-
-        //    Console.WriteLine(player.wallet.money);
-        //    Console.ReadKey();
-        //}
     }
 }

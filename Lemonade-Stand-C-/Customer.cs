@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
-    public class Customer
+    public class Customer : Common
     {
         //variables
         public double priceDemand;
@@ -19,12 +19,11 @@ namespace Lemonade_Stand_C_
 
         public Customer()
         {
-        
+
         }
 
-    // Customer demand depends on overcast condtion, temperature, recipe, price of lemonade, and each individual's chance
-    // of buying
-    public double DemandLemonade(Recipe recipe)  // depends on lemonade recipe --cheapest a cost is 0.30
+        //Customer demand depends on overcast condtion, temperature, recipe, price and probabilities
+        public double DemandLemonade(Recipe recipe)
         {
             if (recipe.lemonadePrice <= .50)
             {
@@ -44,7 +43,8 @@ namespace Lemonade_Stand_C_
             }
             return priceDemand;
         }
-    public double GetWeatherDemand(Weather weather)
+
+        public double GetWeatherDemand(Weather weather)
         {
             if (weather.weatherIndex == 4)
             {
@@ -68,15 +68,13 @@ namespace Lemonade_Stand_C_
             }
             return weatherDemand;
         }
-        public double BuyOrNot(Recipe recipe, Weather weather) 
-            // varies from customer to customer. This is the final % factoring weather, temp, demand, lemonade price.
+
+        //A method which the customer will use to determine if there is a chance of getting lemonade
+        public double GetBuyingProbability(Recipe recipe, Weather weather)
         {
-            Random rnd = new Random();
-            buyChance = rnd.Next(50, 90) * priceDemand * weatherDemand;
-            return buyChance;
+            double buyingProbability;
+            buyingProbability = GetRandom(50, 90) * priceDemand * weatherDemand;
+            return buyingProbability;
         }
-
-   
-
     }
 }

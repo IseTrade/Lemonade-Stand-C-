@@ -14,6 +14,6 @@ namespace Lemonade_Stand_C_
         public double dailyProfit = 0;  //total cups sold - dailyLoss
         public double totalGameProfit = 0;
         public double totalGameLoss = 0;
-        
+
     }
 }
