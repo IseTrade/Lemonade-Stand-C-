@@ -15,7 +15,8 @@ namespace Lemonade_Stand_C_
         public int recipeLemon;
         public int recipeIce;
         public int recipeCup;
-
+        Inventory playerInventory;
+        Wallet playerWallet;
         public double lemonadeCost;
         public double lemonadePrice;
 
@@ -61,16 +62,20 @@ namespace Lemonade_Stand_C_
             PickSugar();
             PickIce();
         }
-        public int MakeLemonade()
+        public int MakeLemonade(Inventory playerInventory)
         {
             Console.WriteLine("How many cups of lemonade would you like to make");
-            recipeCup = int.Parse(Console.ReadLine());
-            return recipeCup;
+            playerInventory.lemonade = int.Parse(Console.ReadLine());
+            playerInventory.ice -= playerInventory.lemonade * recipeIce;
+            playerInventory.sugar -= playerInventory.lemonade * recipeSugar;
+            playerInventory.cup -= playerInventory.lemonade * recipeCup;
+            playerInventory.lemon -= playerInventory.lemonade * recipeLemon;
+            return playerInventory.lemonade;
         }
 
         public double GetLemonadeCost(Store store)
         {
-            lemonadeCost = (recipeIce * store.iceCost) + (recipeSugar * store.sugarCost) + (recipeLemon * lemonadeCost) + (recipeCup * store.cupCost);
+            lemonadeCost = (recipeIce * store.iceCost) + (recipeSugar * store.sugarCost) + (recipeLemon * store.lemonCost) + (1 * store.cupCost);
             return lemonadeCost;
         }
 
@@ -79,12 +84,14 @@ namespace Lemonade_Stand_C_
         {
             Console.WriteLine("Please set the price for a lemonade cup in dollar amount.");
             lemonadePrice = double.Parse(Console.ReadLine());
+            UI.PressKey();
         }
 
-        public void ShowRecipe(int recipeCup, int recipeIse, int recipeSugar, int recipeLemon)
+        public void ShowRecipe(int recipeIce, int recipeSugar, int recipeLemon)
         {
-            Console.WriteLine("Your current recipe for one lemnonade has {0} cup, {1} ice cubes, {2} sugar cubes, and {3} lemons", recipeCup, recipeIse, recipeSugar, recipeLemon);
+            Console.WriteLine("Your current recipe for one lemnonade has 1 cup, {0} ice cubes, {1} sugar cubes, and {2} lemons",recipeIce, recipeSugar, recipeLemon);
             Console.WriteLine("Your cost for each lemonaid cup is {0} dollars.", lemonadeCost);
+            UI.PressKey();
         }
     }
 }

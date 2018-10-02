@@ -47,7 +47,7 @@ namespace Lemonade_Stand_C_
         }
         public static void ShowInventory(Inventory playerInventory, Wallet playerWallet)
         {
-            Console.WriteLine("Current you have {0} cups, {1} lemons, {2} ice cubes, {3} units of sugar, and {4} dollars to spend...", playerInventory.cup, playerInventory.lemon, playerInventory.ice, playerInventory.sugar, playerWallet.money);
+            Console.WriteLine("Current you have {0} cups, {1} lemons, {2} ice cubes, {3} units of sugar, {4} lemonades, and {5} dollars to spend...", playerInventory.cup, playerInventory.lemon, playerInventory.ice, playerInventory.sugar, playerInventory.lemonade, playerWallet.money);
             Console.WriteLine("Press any key to continue");
             Console.ReadKey();
         }

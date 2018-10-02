@@ -58,7 +58,11 @@ namespace Lemonade_Stand_C_
             UI.ShowRecipeMenu();
             recipe.PickRecipe(recipe);
             UI.PressKey();
-
+            recipe.GetLemonadeCost(store);
+            recipe.ShowRecipe( recipe.recipeIce, recipe.recipeSugar, recipe.recipeLemon);
+            recipe.SetLemonadePrice();
+            recipe.MakeLemonade(playerInventory);
+            UI.ShowInventory(playerInventory, playerWallet);
 
 
 

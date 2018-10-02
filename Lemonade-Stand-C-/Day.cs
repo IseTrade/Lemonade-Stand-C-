@@ -91,7 +91,7 @@ namespace Lemonade_Stand_C_
             }
         }
 
-        public void DayCost()
+        public void DayCost() //cost of all coffee made + unsold ice
         {
             //TODO
         }
