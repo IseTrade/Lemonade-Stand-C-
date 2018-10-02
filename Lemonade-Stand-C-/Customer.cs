@@ -12,6 +12,7 @@ namespace Lemonade_Stand_C_
         public double priceDemand;
         public double weatherDemand;
         public double buyChance;
+        public double buyingProbability;
         public Weather weather;
         public List<Customer> customer;
 

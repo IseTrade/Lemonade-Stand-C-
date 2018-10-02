@@ -15,8 +15,8 @@ namespace Lemonade_Stand_C_
         public int recipeLemon;
         public int recipeIce;
         public int recipeCup;
-        Inventory playerInventory;
-        Wallet playerWallet;
+        //Inventory playerInventory;
+        //Wallet playerWallet;
         public double lemonadeCost;
         public double lemonadePrice;
 
@@ -30,12 +30,14 @@ namespace Lemonade_Stand_C_
             recipeCup = 1;
         }
 
-
         public void AskNewRecipe()
         {
             Console.WriteLine("Do you want to make a new recipe?");
 
         }
+
+        // **** The methods below such as PickLemon, PickSugar, PickIce, and PickRecipe follow SOLID's Single Responsibility principle, that each method does
+        // **** one thing and one thing well.
         public int PickLemon()
         {
             Console.WriteLine("How many lemons would you like to put in your each cup?");
@@ -84,7 +86,7 @@ namespace Lemonade_Stand_C_
         {
             Console.WriteLine("Please set the price for a lemonade cup in dollar amount.");
             lemonadePrice = double.Parse(Console.ReadLine());
-            UI.PressKey();
+            UI.PressKey();  //This gives a quick way to prompt "press any key to continue".
         }
 
         public void ShowRecipe(int recipeIce, int recipeSugar, int recipeLemon)

@@ -14,10 +14,7 @@ namespace Lemonade_Stand_C_
         public double lemonCost;
         public double sugarCost;
         public double iceCost;
-        public double cupCost;
-        Player player;
-        
-
+        public double cupCost;             
         public Store()
         {
             lemonCost = 0.15;

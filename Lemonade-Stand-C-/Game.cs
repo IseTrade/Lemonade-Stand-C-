@@ -50,8 +50,8 @@ namespace Lemonade_Stand_C_
             weather.ShowWeekForecast();
             weather.ShowCurrentWeather();
             Console.ReadKey();
-            UI.ShowStoreMenu();
-            Console.ReadKey();
+            //UI.ShowStoreMenu();
+            //Console.ReadKey();
             player.BuySupplies(store, playerInventory, playerWallet);
             UI.ShowInventory(playerInventory, playerWallet);
             Console.ReadKey();

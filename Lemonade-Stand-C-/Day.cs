@@ -23,8 +23,6 @@ namespace Lemonade_Stand_C_
         public double dayProfit;
         public double dayLoss;
 
-        //public static Random rand = new Random();
-
         public Day()
         {
             day = 1;
@@ -49,7 +47,7 @@ namespace Lemonade_Stand_C_
         }
         public void GetDayCustomers(Weather weather)
         {
-            if (weather.weatherIndex == 4)
+            if (weather.weatherIndex == 4)  //This weather index system is wonky.  Need to rework it. 
             {
                 int numberCustomer = GetRandom(25, 30);
                 for (int i = 0; i < numberCustomer; i++)

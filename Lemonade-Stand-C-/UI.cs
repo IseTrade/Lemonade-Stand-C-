@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
-    /// <summary>
+ 
     /// A UI class which presents visible elements of the game
-    /// </summary>
     public class UI
     {
-        public static void ShowRules()
+        public static void ShowRules()   // Showing main intro screen to the game.
         {
             Console.WriteLine("Welcome to Jeff's Lemonade Stand Game\n\n");
             Console.WriteLine("In this game, you are the proprietor of a lemonade stand. Your object, just like in any other businesses");
@@ -24,7 +23,7 @@ namespace Lemonade_Stand_C_
             Console.ReadKey();
         }
 
-        public static void ShowStoreMenu()
+        public static void ShowStoreMenu()  // Menu for buying supplies from the store for the day. 
         {
             Console.WriteLine("WELCOME TO THE STORE\n\n");
             Console.WriteLine("As long as you have enough money you can buy items such as cups, lemons, ice and sugar from us.");
@@ -33,7 +32,7 @@ namespace Lemonade_Stand_C_
             Console.ReadKey();
         }
 
-        public static void ShowRecipeMenu()
+        public static void ShowRecipeMenu()  // Intro screen to making custom recipe section.
         {
             Console.WriteLine("Welcome to the recipe menu. Here you can hone your skills to make the perfect lemonade for");
             Console.WriteLine("your customers. You can adjust the amount of sugar, lemon and ice that goes into each cup.");
@@ -45,7 +44,7 @@ namespace Lemonade_Stand_C_
             Console.WriteLine("Please press any key to continue");
             Console.ReadKey();
         }
-        public static void ShowInventory(Inventory playerInventory, Wallet playerWallet)
+        public static void ShowInventory(Inventory playerInventory, Wallet playerWallet)  // Showing current inventory and money.
         {
             Console.WriteLine("Current you have {0} cups, {1} lemons, {2} ice cubes, {3} units of sugar, {4} lemonades, and {5} dollars to spend...", playerInventory.cup, playerInventory.lemon, playerInventory.ice, playerInventory.sugar, playerInventory.lemonade, playerWallet.money);
             Console.WriteLine("Press any key to continue");

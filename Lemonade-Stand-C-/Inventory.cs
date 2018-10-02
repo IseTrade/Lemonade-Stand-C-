@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_C_
 {
-    /// <summary>
     /// A storage container for keeping store bought items
-    /// </summary>
     public class Inventory
     {
         public int lemon = 0;
