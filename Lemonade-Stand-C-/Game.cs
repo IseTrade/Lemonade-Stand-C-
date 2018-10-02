@@ -64,14 +64,6 @@ namespace Lemonade_Stand_C_
             recipe.MakeLemonade(playerInventory);
             UI.ShowInventory(playerInventory, playerWallet);
 
-
-
-            //2. Make lemonade with the purchased items
-            //TODO
-
-            //3. Get the weather forecast
-            //TODO
-
             //4. Sell lemonade to customer
             //TODO
 

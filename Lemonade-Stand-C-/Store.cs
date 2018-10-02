@@ -16,7 +16,7 @@ namespace Lemonade_Stand_C_
         public double iceCost;
         public double cupCost;
         Player player;
-        //UI ui;
+        
 
         public Store()
         {

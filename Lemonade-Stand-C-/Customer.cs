@@ -13,8 +13,6 @@ namespace Lemonade_Stand_C_
         public double weatherDemand;
         public double buyChance;
         public Weather weather;
-        //static Random rand = new Random();
-        public int customerBase = 30; // pool of potential customers for the lemonade stand
         public List<Customer> customer;
 
         public Customer()

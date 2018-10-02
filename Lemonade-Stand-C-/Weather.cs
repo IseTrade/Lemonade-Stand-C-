@@ -9,13 +9,15 @@ namespace Lemonade_Stand_C_
     //Inherit from our common methods
     public class Weather : Common
     {
-        public int weatherIndex;
+        
         public int temperatureIndex;
         public int conditionIndex;
-
+        //public int weatherIndex;
+        public int weatherIndex = GetWeatherIndex(temperatureIndex, conditionIndex);
         public List<int> weekTempList = new List<int>();
         public List<int> weekCondList = new List<int>();
         public List<string> temperatureList = new List<string>()
+        
         {
             "Cold",
             "Warm",
@@ -67,11 +69,14 @@ namespace Lemonade_Stand_C_
         public void ShowCurrentWeather()
         {
             int x = GetRandom(0, 6);
-            //int y = GetRandom(0, 7);
-
             temperatureIndex = weekTempList[x];
             conditionIndex = weekCondList[x];
             Console.WriteLine("The current weather is {0} and {1}.", temperatureList[temperatureIndex], conditionList[conditionIndex]);
+        }
+        public int GetWeatherIndex(int tempIndex, int condIndex)
+        {
+            int wIndex = temperatureIndex + conditionIndex;
+            return wIndex;
         }
     }
 }
